@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "generate global gql types from your gql schema",
   "bin": {
-    "gen-global-gql-types": "./dist/main.js"
+    "gen-global-gql-ts-types": "./dist/main.js"
   },
   "engines": {
     "node": ">= 10.13"

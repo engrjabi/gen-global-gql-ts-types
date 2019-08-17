@@ -1,3 +1,3 @@
-# Go-Alias
+# gen-global-gql-ts-types
 
-generates an alias for your project files so you can easily navigate thru your multiple projects
+generate global gql types from your gql schema
