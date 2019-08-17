@@ -1,6 +1,6 @@
 {
   "name": "gen-global-gql-ts-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "generate global gql types from your gql schema",
   "bin": {
     "gen-global-gql-ts-types": "./dist/main.js"
