@@ -5,6 +5,7 @@ const concat = require('concat');
 const writeFile = require('write-file');
 const deleteDirectory = require('delete-directory');
 const _debounce = require('lodash/debounce');
+const _defaultTo = require('lodash/defaultTo');
 
 /**
  * Meant to be used for rapid repetitive calls of console log so
@@ -18,9 +19,11 @@ const debouncedLogging = _debounce(message => console.log(message));
   const tempDirName = 'gen-global-gql-types-tmp';
   const workingDirectory = process.env.PWD;
   const tempDirNameFullPath = path.join(workingDirectory, tempDirName);
+  const outputFileName = normalizedArgs.pop();
+  const otherCodegenArgs = _defaultTo(normalizedArgs, []);
   const outputFileFullPath = path.join(
     workingDirectory,
-    `${normalizedArgs[0]}.ts`,
+    `${outputFileName}.ts`,
   );
 
   if (normalizedArgs.length !== 1) {
@@ -33,6 +36,7 @@ const debouncedLogging = _debounce(message => console.log(message));
       'codegen:generate',
       '--target=typescript',
       '--outputFlat',
+      ...otherCodegenArgs,
       tempDirName,
     ]);
 
